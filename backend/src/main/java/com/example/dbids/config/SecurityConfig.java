@@ -13,35 +13,27 @@ import java.util.List;
 
 @Configuration
 public class SecurityConfig {
-
     @Bean
     SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http
-                .cors(Customizer.withDefaults())
-                .csrf(csrf -> csrf
-                        // 로그인/회원가입 엔드포인트는 CSRF 검증 제외 (프론트에서 쿠키/세션 안 쓰는 경우 특히 필요)
-                        .ignoringRequestMatchers("/api/auth/**", "/api/ingest/**", "/api/settings/**")
-                )
-                .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/**").permitAll()
-                )
-                .httpBasic(basic -> basic.disable())
-                .formLogin(form -> form.disable())
+                .cors(cors -> {})
+                .csrf(csrf -> csrf.disable())             // ← 임시로 완전 비활성
+                .authorizeHttpRequests(auth -> auth.anyRequest().permitAll())
+                .httpBasic(b -> b.disable())
+                .formLogin(f -> f.disable())
                 .logout(l -> l.disable());
-
         return http.build();
     }
 
     @Bean
     CorsConfigurationSource corsConfigurationSource() {
-        CorsConfiguration cfg = new CorsConfiguration();
-        cfg.setAllowedOriginPatterns(List.of("*")); // ← 어떤 오리진이 와도 허용
-        cfg.setAllowedMethods(List.of("GET","POST","PATCH","PUT","DELETE","OPTIONS"));
+        var cfg = new CorsConfiguration();
+        cfg.setAllowedOriginPatterns(List.of("*")); // ← 어떤 오리진이든 허용
+        cfg.setAllowedMethods(List.of("GET","POST","PUT","PATCH","DELETE","OPTIONS"));
         cfg.setAllowedHeaders(List.of("*"));
-        cfg.setAllowCredentials(false); // 와일드카드(*)와 함께라면 false여야 함
-        UrlBasedCorsConfigurationSource src = new UrlBasedCorsConfigurationSource();
+        cfg.setAllowCredentials(false);             // * 와 함께라면 false
+        var src = new UrlBasedCorsConfigurationSource();
         src.registerCorsConfiguration("/**", cfg);
         return src;
     }
-
 }

@@ -35,14 +35,13 @@ public class SecurityConfig {
     @Bean
     CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration cfg = new CorsConfiguration();
-        // Vite/React 개발용 오리진들
-        cfg.setAllowedOrigins(List.of("http://localhost:5173", "http://localhost:3000"));
+        cfg.setAllowedOriginPatterns(List.of("*")); // ← 어떤 오리진이 와도 허용
         cfg.setAllowedMethods(List.of("GET","POST","PATCH","PUT","DELETE","OPTIONS"));
         cfg.setAllowedHeaders(List.of("*"));
-        // 세션/쿠키를 쓰면 true, 지금 stateless라면 false여도 무방
-        cfg.setAllowCredentials(true);
+        cfg.setAllowCredentials(false); // 와일드카드(*)와 함께라면 false여야 함
         UrlBasedCorsConfigurationSource src = new UrlBasedCorsConfigurationSource();
         src.registerCorsConfiguration("/**", cfg);
         return src;
     }
+
 }

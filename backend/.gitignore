@@ -1,0 +1,7 @@
+# .gitignore (레포 루트 또는 backend/)
+backend/build/
+*.jar
+application-*.yml
+.env.local
+.env
+*.pem

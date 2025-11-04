@@ -1,0 +1,48 @@
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: dbids-mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root123!
+      MYSQL_DATABASE: dbids_target
+      MYSQL_USER: admin
+      MYSQL_PASSWORD: admin123!
+    ports:
+      - "3307:3306"
+    command: ["--default-authentication-plugin=mysql_native_password","--sql-mode="]
+    volumes:
+      - mysql_data:/var/lib/mysql
+      - ./seed:/docker-entrypoint-initdb.d  # 초기 스키마/데이터 시드
+
+  # 로컬 이메일 확인용 SMTP
+  mailhog:
+    image: mailhog/mailhog:latest
+    container_name: dbids-mailhog
+    ports:
+      - "1025:1025"    # SMTP
+      - "8025:8025"    # Web UI (http://localhost:8025)
+
+  # Slack Webhook 대역(모킹)
+  wiremock:
+    image: wiremock/wiremock:3.6.0
+    container_name: dbids-wiremock
+    ports:
+      - "9090:8080"      # WireMock HTTP
+    command:
+      [
+        "--verbose",
+        "--global-response-templating",
+        "--disable-gzip"
+      ]
+    # 로컬 매핑(성공 스텁)을 마운트
+    volumes:
+      - ./wiremock/mappings:/home/wiremock/mappings
+      - ./wiremock/__files:/home/wiremock/__files
+    healthcheck:
+      test: ["CMD", "wget", "-q", "-O", "-", "http://localhost:8080/__admin/health"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+volumes:
+  mysql_data:

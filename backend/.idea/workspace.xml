@@ -5,9 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bb8c7a78-5d9a-4d4b-b1e9-a3c442edcbc0" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../dashboard/vite.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../dashboard/vite.config.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -297,7 +295,7 @@
       <updated>1761034094450</updated>
       <workItem from="1761034095529" duration="8907000" />
       <workItem from="1761056242883" duration="60960000" />
-      <workItem from="1761547691646" duration="84958000" />
+      <workItem from="1761547691646" duration="88437000" />
     </task>
     <servers />
   </component>

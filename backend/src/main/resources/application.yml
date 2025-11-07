@@ -1,7 +1,7 @@
 spring:
   datasource:
     mysql:
-      url: jdbc:mysql://${DB_HOST:127.0.0.1}:${DB_PORT:3306}/${DB_NAME:dbids_target}?characterEncoding=UTF-8&serverTimezone=Asia/Seoul
+      url: jdbc:mysql://${DB_HOST:127.0.0.1}:${DB_PORT:13306}/${DB_NAME:dbids_target}?characterEncoding=UTF-8&serverTimezone=Asia/Seoul
       username: ${DB_USER:admin}
       password: ${DB_PASS:admin123!}
       driver-class-name: com.mysql.cj.jdbc.Driver

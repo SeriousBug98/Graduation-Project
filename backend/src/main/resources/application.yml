@@ -29,9 +29,9 @@ dbids:
     email:
       host: smtp.gmail.com
       port: 587
-      from: ${SMTP_FROM:you@gmail.com}
-      to-default: ${SMTP_TO:you@gmail.com}
-      username: ${SMTP_USER:you@gmail.com}
+      from: ${SMTP_FROM:martin114456@gmail.com}
+      to-default: ${SMTP_TO:martin114456@gmail.com}
+      username: ${SMTP_USER:martin114456@gmail.com}
       password: ${SMTP_PASS:paste_app_password_here}
       starttls: true
       ssl: false

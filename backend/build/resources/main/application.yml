@@ -1,13 +1,74 @@
 spring:
   datasource:
-    driver-class-name: com.mysql.cj.jdbc.Driver
-  jpa:
-    hibernate:
-      ddl-auto: none
+    mysql:
+      url: jdbc:mysql://${DB_HOST:127.0.0.1}:${DB_PORT:13306}/${DB_NAME:dbids_target}?characterEncoding=UTF-8&serverTimezone=Asia/Seoul
+      username: ${DB_USER:admin}
+      password: ${DB_PASS:admin123!}
+      driver-class-name: com.mysql.cj.jdbc.Driver
+    sqlite:
+      driver-class-name: org.sqlite.JDBC
+      jdbc-url: jdbc:sqlite:./data/dbids.sqlite
+      hikari:
+        maximum-pool-size: 3
+        minimum-idle: 1
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: ${SMTP_USER}
+    password: ${SMTP_PASS}
     properties:
-      hibernate.format_sql: true
-      hibernate.show_sql: false
-server:
-  port: ${SERVER_PORT:8080}
-management:
-  endpoints.web.exposure.include: health,info
+      mail.smtp.auth: true
+      mail.smtp.starttls.enable: true
+
+dbids:
+  sqlitePath: ${SQLITE_PATH:./data/dbids.sqlite}
+  notifier:
+    severity-threshold: LOW
+    routes:
+      PATTERN: [ SLACK, EMAIL ]
+    email:
+      host: smtp.gmail.com
+      port: 587
+      from: ${SMTP_FROM:martin114456@gmail.com}
+      to-default: ${SMTP_TO:martin114456@gmail.com}
+      username: ${SMTP_USER:martin114456@gmail.com}
+      password: ${SMTP_PASS:paste_app_password_here}
+      starttls: true
+      ssl: false
+    slack:
+      enabled: true
+      webhook-url: ${WEBHOOK_URL}
+      mention-prefix: "@here"
+      username: "DB-IDS Bot"
+      icon-emoji: ":rotating_light:"
+
+security:
+  cors:
+    allowed-origins: ${CORS_ORIGINS:http://localhost:5173,http://localhost:3000}
+
+behavior:
+  windowSeconds: 60
+  thresholdMedium: 1.0
+  thresholdHigh: 2.0
+  wQpm: 1.0
+  wWriteRatio: 1.0
+  wDdlPerMin: 1.0
+  wErrorBurst: 0.5
+
+authz:
+  user-roles:
+    st04-authz@test.com: READ_ONLY
+  roles:
+    READ_ONLY:
+      allow: ["SELECT:*"]
+      deny:  ["INSERT:*","UPDATE:*","DELETE:*","DDL:*"]
+      defaultSeverity: HIGH
+    DBA:
+      allow: ["SELECT:*","INSERT:*","UPDATE:*","DELETE:*","DDL:*"]
+      deny: []
+      defaultSeverity: HIGH
+  userRoles:
+    readonly: READ_ONLY
+    behavtest: READ_ONLY
+    dba: DBA
+    st04-authz@test.com: READ_ONLY

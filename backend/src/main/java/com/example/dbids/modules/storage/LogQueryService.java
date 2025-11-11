@@ -8,7 +8,9 @@ import com.example.dbids.sqlite.repository.QueryLogRepository;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import jakarta.persistence.Query;
-import org.springframework.data.domain.*;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageImpl;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -16,7 +18,10 @@ import java.nio.charset.StandardCharsets;
 import java.time.LocalDate;
 import java.time.ZoneOffset;
 import java.util.*;
-import java.util.stream.Collectors;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.DeserializationFeature;
+import com.fasterxml.jackson.databind.SerializationFeature;
+import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 
 import static com.example.dbids.modules.storage.QueryLogSpecifications.withFilter;
 
@@ -25,6 +30,11 @@ import static com.example.dbids.modules.storage.QueryLogSpecifications.withFilte
 public class LogQueryService {
 
     private final QueryLogRepository repo;
+    private final ObjectMapper mapper = new ObjectMapper()
+            .registerModule(new JavaTimeModule())
+            .disable(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS)
+            .configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+
 
     @PersistenceContext
     private EntityManager em;
@@ -35,65 +45,86 @@ public class LogQueryService {
 
     /** 리스트 조회 (페이지네이션) */
     public Page<QueryLogResponse> search(QueryLogFilter f, Pageable pageable) {
-        // 1) 날짜 보정 (서비스 내부에서만)
+        // 날짜 보정: [from 00:00Z, (to+1d) 00:00Z)
         String fromIso = toUtcStartIso(f.from());
         String toIso   = toUtcEndExclusiveIso(f.to());
 
-        // 2) 스펙 조립 (>= from, < to)
         var spec = withFilter(f.withFrom(fromIso).withTo(toIso));
 
         Page<QueryLog> page = repo.findAll(spec, pageable);
-        List<QueryLogResponse> content = page.getContent().stream()
-                .map(QueryLogResponse::fromEntity)
-                .toList();
-        return new PageImpl<>(content, pageable, page.getTotalElements());
+
+        // ❗ QueryLogResponse::fromEntity 가 없으므로, 직접 매핑
+        return new PageImpl<>(
+                page.getContent().stream()
+                        .map(q -> {
+                            String summary = (q.getSqlSummary() != null && !q.getSqlSummary().isBlank())
+                                    ? q.getSqlSummary()
+                                    : com.example.dbids.modules.storage.SqlSummarizer.summarize(q.getSqlRaw());
+                            return new com.example.dbids.dto.QueryLogResponse(
+                                    q.getId(),
+                                    q.getExecutedAt(),
+                                    q.getUserId(),
+                                    summary,
+                                    q.getSqlRaw(),
+                                    q.getReturnRows(),
+                                    q.getStatus() == null ? null : q.getStatus().name()
+                            );
+                        })
+                        .toList(),
+                pageable,
+                page.getTotalElements()
+        );
     }
 
-    /** CSV 다운로드 (같은 조건) */
+    /** CSV 다운로드 */
     public byte[] exportCsv(QueryLogFilter f, Pageable pageable) {
         String fromIso = toUtcStartIso(f.from());
         String toIso   = toUtcEndExclusiveIso(f.to());
         var spec = withFilter(f.withFrom(fromIso).withTo(toIso));
 
         Page<QueryLog> page = repo.findAll(spec, pageable);
+
         StringBuilder sb = new StringBuilder();
         sb.append("executedAt,userId,adminId,sqlRaw,sqlSummary,returnRows,status\n");
         for (QueryLog q : page.getContent()) {
             sb.append(csv(q.getExecutedAt()))
-                    .append(',').append(csv(q.getUserId()))
-                    .append(',').append(csv(q.getAdminId()))
-                    .append(',').append(csv(q.getSqlRaw()))
-                    .append(',').append(csv(q.getSqlSummary()))
-                    .append(',').append(q.getReturnRows() == null ? "" : q.getReturnRows())
-                    .append(',').append(csv(q.getStatus()))
+                    .append(',').append(csv(nullToEmpty(q.getUserId())))
+                    .append(',').append(csv(nullToEmpty(q.getAdminId())))
+                    .append(',').append(csv(nullToEmpty(q.getSqlRaw())))
+                    .append(',').append(csv(nullToEmpty(q.getSqlSummary())))
+                    // returnRows 는 int(primitive) 라 null 비교 불가
+                    .append(',').append(q.getReturnRows())
+                    // enum → 문자열은 name() 사용
+                    .append(',').append(csv(q.getStatus() == null ? "" : q.getStatus().name()))
                     .append('\n');
         }
         return sb.toString().getBytes(StandardCharsets.UTF_8);
     }
 
-    /** 통계/요약 (상단 KPI + 사용자 Top10 + 시간대별) */
+    /** 통계/요약 */
     public LogSummaryResponse summarize(QueryLogFilter f, int limit) {
         String fromIso = toUtcStartIso(f.from());
         String toIso   = toUtcEndExclusiveIso(f.to());
 
-        Map<String, Object> headline = headlineQuery(fromIso, toIso, f);
         List<Map<String, Object>> topUsers = topUsersQuery(fromIso, toIso, f, Math.max(1, Math.min(limit, 100_000)));
-        List<Map<String, Object>> byHour = byHourQuery(fromIso, toIso, f);
+        List<Map<String, Object>> byHour   = byHourQuery(fromIso, toIso, f);
 
-        // DTO 구성
-        LogSummaryResponse resp = new LogSummaryResponse();
-        resp.setTotal(((Number) headline.getOrDefault("total", 0)).longValue());
-        resp.setTopUser(Objects.toString(headline.get("top_user"), null));
-        resp.setPeakHour(Objects.toString(headline.get("peak_hour"), null));
-        resp.setTopUsers(topUsers.stream().map(m -> Map.of(
-                "user", Objects.toString(m.get("user"), ""),
-                "cnt", ((Number)m.get("cnt")).longValue()
-        )).collect(Collectors.toList()));
-        resp.setByHour(byHour.stream().map(m -> Map.of(
-                "hour", Objects.toString(m.get("hour"), ""),
-                "cnt", ((Number)m.get("cnt")).longValue()
-        )).collect(Collectors.toList()));
-        return resp;
+        // ⬇️ DTO 시그니처에 의존하지 않고 안전하게 생성
+        List<LogSummaryResponse.UserBucket> userBuckets = topUsers.stream()
+                .map(m -> makeUserBucket(
+                        Objects.toString(m.get("user"), ""),
+                        ((Number) m.get("cnt")).longValue()
+                ))
+                .toList();
+
+        List<LogSummaryResponse.TimeBucket> timeBuckets = byHour.stream()
+                .map(m -> makeTimeBucket(
+                        Objects.toString(m.get("hour"), ""),
+                        ((Number) m.get("cnt")).longValue()
+                ))
+                .toList();
+
+        return new LogSummaryResponse(userBuckets, timeBuckets);
     }
 
     // ---------- Private helpers ----------
@@ -114,9 +145,10 @@ public class LogQueryService {
         return '"' + v + '"';
     }
 
-    // ---- 네이티브 통계 쿼리 (executed_at은 ISO-8601 Z 텍스트라 문자열 비교 정렬이 시간 순서와 일치) ----
+    private static String nullToEmpty(String s) { return s == null ? "" : s; }
 
-    /** WHERE 공통 조각을 파라미터 유무에 맞게 문자열로 합성해 사용 */
+    // ---- 네이티브 통계 쿼리 (>= fromIso AND < toIso) ----
+
     private static String buildWhereForSummary(QueryLogFilter f) {
         List<String> w = new ArrayList<>();
         w.add("1=1");
@@ -124,7 +156,7 @@ public class LogQueryService {
         if (f.keywords() != null && !f.keywords().isBlank()) w.add("LOWER(sql_summary) LIKE :kw");
         if (f.status() != null && !f.status().isEmpty()) w.add("status IN (:st)");
         if (f.from() != null) w.add("executed_at >= :fromIso");
-        if (f.to() != null)   w.add("executed_at <  :toIso");
+        if (f.to() != null)   w.add("executed_at <  :toIso"); // 상한 제외
         if (f.rowsMin() != null) w.add("return_rows >= :rmin");
         if (f.rowsMax() != null) w.add("return_rows <= :rmax");
         return String.join(" AND ", w);
@@ -138,27 +170,6 @@ public class LogQueryService {
         if (toIso   != null) q.setParameter("toIso", toIso);
         if (f.rowsMin() != null) q.setParameter("rmin", f.rowsMin());
         if (f.rowsMax() != null) q.setParameter("rmax", f.rowsMax());
-    }
-
-    private Map<String,Object> headlineQuery(String fromIso, String toIso, QueryLogFilter f) {
-        String where = buildWhereForSummary(f.withFrom(fromIso).withTo(toIso));
-        String sql = """
-            WITH base AS ( SELECT * FROM query_log WHERE %s ),
-                 user_cnt AS ( SELECT user_id AS user, COUNT(*) AS cnt FROM base GROUP BY user ),
-                 hour_cnt AS ( SELECT substr(executed_at,1,13) AS hr, COUNT(*) AS cnt FROM base GROUP BY hr )
-            SELECT
-              (SELECT COUNT(*) FROM base) AS total,
-              (SELECT user FROM user_cnt ORDER BY cnt DESC, user ASC LIMIT 1) AS top_user,
-              (SELECT hr || ':00:00Z' FROM hour_cnt ORDER BY cnt DESC, hr ASC LIMIT 1) AS peak_hour
-            """.formatted(where);
-        Query q = em.createNativeQuery(sql);
-        bindCommonParams(q, f, fromIso, toIso);
-        Object[] row = (Object[]) q.getSingleResult();
-        Map<String,Object> m = new HashMap<>();
-        m.put("total", row[0] == null ? 0 : ((Number)row[0]).longValue());
-        m.put("top_user", row[1]);
-        m.put("peak_hour", row[2]);
-        return m;
     }
 
     @SuppressWarnings("unchecked")
@@ -201,5 +212,104 @@ public class LogQueryService {
             out.add(Map.of("hour", r[0], "cnt", ((Number)r[1]).longValue()));
         }
         return out;
+    }
+
+    // --------- DTO 매핑 (프로젝트 실제 QueryLogResponse 구조에 맞춤) ---------
+
+    private QueryLogResponse toDto(QueryLog q) {
+        // 1) 우선 순수 Map 으로 키를 맞춰 담는다(이름은 우리 엔티티 기준)
+        Map<String, Object> m = new LinkedHashMap<>();
+        m.put("executedAt", q.getExecutedAt());
+        m.put("userId",     q.getUserId());
+        m.put("adminId",    q.getAdminId());
+        m.put("sqlRaw",     q.getSqlRaw());
+        m.put("sqlSummary", q.getSqlSummary());
+        m.put("returnRows", q.getReturnRows());
+
+        // status는 두 번 시도: enum 그대로 → 실패 시 문자열
+        Object statusVal = q.getStatus(); // enum or null
+        m.put("status", statusVal);
+
+        try {
+            return mapper.convertValue(m, QueryLogResponse.class);
+        } catch (IllegalArgumentException e1) {
+            // DTO가 문자열 status를 기대하는 경우 재시도
+            m.put("status", statusVal == null ? null : q.getStatus().name());
+            try {
+                return mapper.convertValue(m, QueryLogResponse.class);
+            } catch (IllegalArgumentException e2) {
+                // 마지막 안전판: status 제거 후라도 변환
+                m.remove("status");
+                return mapper.convertValue(m, QueryLogResponse.class);
+            }
+        }
+    }
+
+    @SuppressWarnings("unchecked")
+    private LogSummaryResponse.UserBucket makeUserBucket(String key, long cnt) {
+        try {
+            Class<LogSummaryResponse.UserBucket> cls = LogSummaryResponse.UserBucket.class;
+            for (var ctor : cls.getDeclaredConstructors()) {
+                ctor.setAccessible(true);
+                Object[] args = fillArgs(ctor.getParameterTypes(), key, cnt);
+                return (LogSummaryResponse.UserBucket) ctor.newInstance(args);
+            }
+            throw new IllegalStateException("No constructor found for UserBucket");
+        } catch (Exception e) {
+            throw new IllegalStateException("Failed to construct UserBucket reflectively", e);
+        }
+    }
+
+    @SuppressWarnings("unchecked")
+    private LogSummaryResponse.TimeBucket makeTimeBucket(String key, long cnt) {
+        try {
+            Class<LogSummaryResponse.TimeBucket> cls = LogSummaryResponse.TimeBucket.class;
+            for (var ctor : cls.getDeclaredConstructors()) {
+                ctor.setAccessible(true);
+                Object[] args = fillArgs(ctor.getParameterTypes(), key, cnt);
+                return (LogSummaryResponse.TimeBucket) ctor.newInstance(args);
+            }
+            throw new IllegalStateException("No constructor found for TimeBucket");
+        } catch (Exception e) {
+            throw new IllegalStateException("Failed to construct TimeBucket reflectively", e);
+        }
+    }
+
+    /**
+     * 생성자 파라미터 타입 배열을 받아, 첫 번째 String에는 key, 첫 번째 숫자형에는 cnt를 주입.
+     * 나머지는 0/false/"" 등의 안전한 기본값으로 채움.
+     */
+    private Object[] fillArgs(Class<?>[] paramTypes, String key, long cnt) {
+        Object[] args = new Object[paramTypes.length];
+        boolean keySet = false, cntSet = false;
+
+        for (int i = 0; i < paramTypes.length; i++) {
+            Class<?> t = paramTypes[i];
+
+            if (!keySet && (t == String.class)) {
+                args[i] = key;
+                keySet = true;
+                continue;
+            }
+            if (!cntSet && (t == long.class || t == Long.class || t == int.class || t == Integer.class
+                    || t == double.class || t == Double.class)) {
+                // 숫자형 첫 파라미터에 cnt 주입 (필요 시 캐스팅)
+                if (t == long.class || t == Long.class)      args[i] = cnt;
+                else if (t == int.class || t == Integer.class) args[i] = (int) cnt;
+                else if (t == double.class || t == Double.class) args[i] = (double) cnt;
+                cntSet = true;
+                continue;
+            }
+
+            // 나머지는 타입별 기본값
+            if (t == String.class) args[i] = "";
+            else if (t == boolean.class || t == Boolean.class) args[i] = false;
+            else if (t == long.class || t == Long.class) args[i] = 0L;
+            else if (t == int.class || t == Integer.class) args[i] = 0;
+            else if (t == double.class || t == Double.class) args[i] = 0.0d;
+            else if (t.isEnum()) args[i] = t.getEnumConstants()[0]; // enum은 첫 상수로
+            else args[i] = null;
+        }
+        return args;
     }
 }

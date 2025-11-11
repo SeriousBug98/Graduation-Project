@@ -13,14 +13,16 @@
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/dbids/config/SecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/example/dbids/config/SecurityConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/dbids/dto/QueryLogFilter.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/example/dbids/dto/QueryLogFilter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/dbids/dto/QueryLogResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/example/dbids/dto/QueryLogResponse.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/dbids/modules/storage/LogQueryService.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/example/dbids/modules/storage/LogQueryService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/dbids/modules/storage/QueryLogSpecs.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/problems/problems-report.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/problems/problems-report.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/resources/main/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/IngestController.class.uniqueId0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/IngestDtos$IngestLogRequest.class.uniqueId1" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/IngestDtos.class.uniqueId2" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/dbids.sqlite" beforeDir="false" afterPath="$PROJECT_DIR$/data/dbids.sqlite" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dbids/dto/QueryLogResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dbids/dto/QueryLogResponse.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dbids/modules/storage/LogQueryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dbids/modules/storage/LogQueryService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -257,10 +259,16 @@
       </method>
     </configuration>
     <configuration name="DbidsApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <option name="envFilePaths">
+        <option value="$PROJECT_DIR$/.env" />
+      </option>
       <module name="dbids.main" />
+      <selectedOptions>
+        <option name="environmentVariables" />
+      </selectedOptions>
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.dbids.DbidsApplication" />
       <extension name="net.ashald.envfile">
-        <option name="IS_ENABLED" value="false" />
+        <option name="IS_ENABLED" value="true" />
         <option name="IS_SUBST" value="false" />
         <option name="IS_PATH_MACRO_SUPPORTED" value="false" />
         <option name="IS_IGNORE_MISSING_FILES" value="false" />
@@ -309,7 +317,7 @@
       <updated>1761034094450</updated>
       <workItem from="1761034095529" duration="8907000" />
       <workItem from="1761056242883" duration="60960000" />
-      <workItem from="1761547691646" duration="109266000" />
+      <workItem from="1761547691646" duration="111727000" />
     </task>
     <servers />
   </component>

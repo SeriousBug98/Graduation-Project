@@ -11,6 +11,12 @@ spring:
       hikari:
         maximum-pool-size: 3
         minimum-idle: 1
+  jackson:
+    time-zone: UTC
+  jpa:
+    properties:
+      jdbc:
+        time-zone: UTC
   mail:
     host: smtp.gmail.com
     port: 587
@@ -30,9 +36,9 @@ dbids:
       host: smtp.gmail.com
       port: 587
       from: ${SMTP_FROM:martin114456@gmail.com}
-      to-default: ${SMTP_TO:martin114456@gmail.com}
-      username: ${SMTP_USER:martin114456@gmail.com}
-      password: ${SMTP_PASS:paste_app_password_here}
+      to-default: ${SMTP_TO:martin1144@gmail.com}
+      username: ${SMTP_USER:martin1144@gmail.com}
+      password: ${SMTP_PASS}
       starttls: true
       ssl: false
     slack:
@@ -68,7 +74,7 @@ authz:
       deny: []
       defaultSeverity: HIGH
   userRoles:
+    st04-authz@test.com: READ_ONLY
     readonly: READ_ONLY
     behavtest: READ_ONLY
     dba: DBA
-    st04-authz@test.com: READ_ONLY

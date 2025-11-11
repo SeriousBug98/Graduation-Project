@@ -36,8 +36,8 @@ dbids:
       host: smtp.gmail.com
       port: 587
       from: ${SMTP_FROM:martin114456@gmail.com}
-      to-default: ${SMTP_TO:martin1144@gmail.com}
-      username: ${SMTP_USER:martin1144@gmail.com}
+      to-default: ${SMTP_TO:martin114456@gmail.com}
+      username: ${SMTP_USER:martin114456@gmail.com}
       password: ${SMTP_PASS}
       starttls: true
       ssl: false
@@ -62,8 +62,6 @@ behavior:
   wErrorBurst: 0.5
 
 authz:
-  user-roles:
-    st04-authz@test.com: READ_ONLY
   roles:
     READ_ONLY:
       allow: ["SELECT:*"]
@@ -74,7 +72,7 @@ authz:
       deny: []
       defaultSeverity: HIGH
   userRoles:
-    st04-authz@test.com: READ_ONLY
+    "st04-authz@test.com": READ_ONLY
     readonly: READ_ONLY
     behavtest: READ_ONLY
     dba: DBA

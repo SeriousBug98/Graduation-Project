@@ -5,6 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bb8c7a78-5d9a-4d4b-b1e9-a3c442edcbc0" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../backend.zip" beforeDir="false" afterPath="$PROJECT_DIR$/../backend.zip" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.14/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.14/checksums/checksums.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.14/checksums/md5-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.14/checksums/md5-checksums.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.14/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.14/checksums/sha1-checksums.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.14/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.14/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.14/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.14/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.14/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.14/fileHashes/fileHashes.bin" afterDir="false" />
@@ -13,16 +17,25 @@
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/dbids/dto/QueryLogFilter.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/example/dbids/dto/QueryLogFilter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/dbids/dto/QueryLogResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/example/dbids/dto/QueryLogResponse.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/dbids/modules/storage/LogQueryService.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/example/dbids/modules/storage/LogQueryService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/dbids/modules/storage/QueryLogSpecs.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/problems/problems-report.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/problems/problems-report.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/dbids/api/IngestController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/example/dbids/api/IngestController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/dbids/modules/authz/AuthZEngine$Action.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/example/dbids/modules/authz/AuthZEngine$Action.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/dbids/modules/authz/AuthZEngine$Violation.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/example/dbids/modules/authz/AuthZEngine$Violation.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/dbids/modules/authz/AuthZEngine.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/example/dbids/modules/authz/AuthZEngine.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/dbids/modules/authz/AuthZProperties$Role.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/example/dbids/modules/authz/AuthZProperties$Role.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/dbids/modules/authz/AuthZProperties.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/example/dbids/modules/authz/AuthZProperties.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/dbids/modules/authz/AuthZService.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/example/dbids/modules/authz/AuthZService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/dbids/modules/storage/StorageService.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/example/dbids/modules/storage/StorageService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/resources/main/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/dbids.sqlite" beforeDir="false" afterPath="$PROJECT_DIR$/data/dbids.sqlite" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dbids/api/IngestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dbids/api/IngestController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dbids/dto/QueryLogResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dbids/dto/QueryLogResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dbids/modules/authz/AuthZEngine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dbids/modules/authz/AuthZEngine.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dbids/modules/authz/AuthZProperties.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dbids/modules/authz/AuthZProperties.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dbids/modules/authz/AuthZService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dbids/modules/authz/AuthZService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dbids/modules/storage/LogQueryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dbids/modules/storage/LogQueryService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -317,7 +330,7 @@
       <updated>1761034094450</updated>
       <workItem from="1761034095529" duration="8907000" />
       <workItem from="1761056242883" duration="60960000" />
-      <workItem from="1761547691646" duration="111727000" />
+      <workItem from="1761547691646" duration="115572000" />
     </task>
     <servers />
   </component>

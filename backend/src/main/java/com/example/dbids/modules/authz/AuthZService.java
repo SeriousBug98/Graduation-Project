@@ -1,3 +1,4 @@
+// src/main/java/com/example/dbids/modules/authz/AuthZService.java
 package com.example.dbids.modules.authz;
 
 import com.example.dbids.modules.notify.NotificationService;
@@ -10,6 +11,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.time.Instant;
+import java.util.Locale;
 import java.util.Optional;
 import java.util.UUID;
 
@@ -32,14 +34,10 @@ public class AuthZService {
         this.logRepo = logRepo;
     }
 
-    /**
-     * 권한 위반이면 DetectionEvent(Type=AUTHZ) 저장.
-     * - action == DENY 인 경우 "차단"으로 간주하고 QueryLog.status를 FAILURE로 보정.
-     * - 실패해도 본 플로우를 방해하지 않도록 예외는 삼킨다 (fail-open).
-     */
     @Transactional("sqliteTx")
     public Optional<String> evaluateAndRecord(QueryLog log) {
         try {
+            // ★ userId 원본 그대로 전달
             var v = engine.evaluate(log.getUserId(), log.getSqlRaw());
             if (v.isEmpty()) return Optional.empty();
 
@@ -57,19 +55,12 @@ public class AuthZService {
             eventRepo.save(ev);
             notifier.onEvent(ev);
 
-            // ★ 권한 엔진이 DENY라면 차단으로 간주 → QueryLog.status를 FAILURE로 보정
             if (log.getStatus() != QueryLog.Status.FAILURE) {
                 log.setStatus(QueryLog.Status.FAILURE);
-                try {
-                    logRepo.save(log); // merge
-                } catch (Exception ignore) {
-                    // fail-open
-                }
+                try { logRepo.save(log); } catch (Exception ignore) {}
             }
-
             return Optional.of(ev.getId());
         } catch (Exception ignore) {
-            // fail-open
             return Optional.empty();
         }
     }

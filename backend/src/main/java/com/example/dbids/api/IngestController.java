@@ -1,3 +1,4 @@
+// src/main/java/com/example/dbids/api/IngestController.java
 package com.example.dbids.api;
 
 import com.example.dbids.dto.QueryLogDTO;
@@ -11,6 +12,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.net.URI;
+import java.util.Locale;
 import java.util.Map;
 
 @RestController
@@ -21,7 +23,7 @@ public class IngestController {
     private final DetectionService detection;
     private final BehaviorDetector behavior;
     private final QueryLogRepository logRepo;
-    private final AuthZService authz;  // FR-4
+    private final AuthZService authz;
 
     public IngestController(StorageService storage,
             DetectionService detection,
@@ -38,10 +40,10 @@ public class IngestController {
     @PostMapping("/log")
     public ResponseEntity<?> ingest(@RequestBody QueryLogDTO dto) {
         try {
-            // FR-1: 저장 (UUID LogID 반환)
+            // ★ userId는 받은 그대로 저장 (대문자화/변형 X)
+
             String logId = storage.saveQueryLog(dto);
 
-            // FR-2/FR-3: 저장된 엔티티 조회 후 탐지들 수행 (실패 시 삼킴: fail-open)
             try {
                 QueryLog saved = logRepo.findById(logId).orElse(null);
                 if (saved != null) {

@@ -210,8 +210,6 @@ export default function Login() {
         <div style={{ fontSize: 12, opacity: 0.8, marginTop: 4 }}>
           계정이 없나요? <Link to="/register">회원가입</Link>
         </div>
-
-        <div style={{ fontSize: 12, opacity: 0.7 }}>* 5회 실패 시 계정 잠금. HTTPS에서만 사용하세요.</div>
       </form>
     </div>
   );

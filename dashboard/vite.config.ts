@@ -10,7 +10,7 @@ export default defineConfig({
         host: true,
         port: 5173,
         strictPort: true,
-        allowedHosts: ["ec2-52-78-120-100.ap-northeast-2.compute.amazonaws.com", "52.78.120.100"],
+        allowedHosts: ["ec2-43-203-223-237.ap-northeast-2.compute.amazonaws.com", "43.203.223.237"],
         proxy: {
             "/api": {
                 target: "http://127.0.0.1:8080",

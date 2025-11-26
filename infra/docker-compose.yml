@@ -12,29 +12,27 @@ services:
     command: ["--default-authentication-plugin=mysql_native_password","--sql-mode="]
     volumes:
       - mysql_data:/var/lib/mysql
-      - ./seed:/docker-entrypoint-initdb.d  # 초기 스키마/데이터 시드
+      - ./seed:/docker-entrypoint-initdb.d  
 
-  # 로컬 이메일 확인용 SMTP
+
   mailhog:
     image: mailhog/mailhog:latest
     container_name: dbids-mailhog
     ports:
-      - "1025:1025"    # SMTP
-      - "8025:8025"    # Web UI (http://localhost:8025)
+      - "1025:1025"    
+      - "8025:8025"    
 
-  # Slack Webhook 대역(모킹)
   wiremock:
     image: wiremock/wiremock:3.6.0
     container_name: dbids-wiremock
     ports:
-      - "9090:8080"      # WireMock HTTP
+      - "9090:8080"      
     command:
       [
         "--verbose",
         "--global-response-templating",
         "--disable-gzip"
       ]
-    # 로컬 매핑(성공 스텁)을 마운트
     volumes:
       - ./wiremock/mappings:/home/wiremock/mappings
       - ./wiremock/__files:/home/wiremock/__files

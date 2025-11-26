@@ -1,0 +1,200 @@
+2025-11-11 18:47:25,288 INFO o.a.j.u.JMeterUtils: Setting Locale to en_EN
+2025-11-11 18:47:25,300 INFO o.a.j.JMeter: Loading user properties from: /opt/homebrew/Cellar/jmeter/5.6.3/libexec/bin/user.properties
+2025-11-11 18:47:25,300 INFO o.a.j.JMeter: Loading system properties from: /opt/homebrew/Cellar/jmeter/5.6.3/libexec/bin/system.properties
+2025-11-11 18:47:25,303 INFO o.a.j.JMeter: Copyright (c) 1998-2024 The Apache Software Foundation
+2025-11-11 18:47:25,303 INFO o.a.j.JMeter: Version 5.6.3
+2025-11-11 18:47:25,303 INFO o.a.j.JMeter: java.version=21.0.8
+2025-11-11 18:47:25,303 INFO o.a.j.JMeter: java.vm.name=OpenJDK 64-Bit Server VM
+2025-11-11 18:47:25,303 INFO o.a.j.JMeter: os.name=Mac OS X
+2025-11-11 18:47:25,303 INFO o.a.j.JMeter: os.arch=aarch64
+2025-11-11 18:47:25,303 INFO o.a.j.JMeter: os.version=15.6.1
+2025-11-11 18:47:25,303 INFO o.a.j.JMeter: file.encoding=UTF-8
+2025-11-11 18:47:25,303 INFO o.a.j.JMeter: java.awt.headless=null
+2025-11-11 18:47:25,303 INFO o.a.j.JMeter: Max memory     =1073741824
+2025-11-11 18:47:25,303 INFO o.a.j.JMeter: Available Processors =8
+2025-11-11 18:47:25,308 INFO o.a.j.JMeter: Default Locale=English (EN)
+2025-11-11 18:47:25,308 INFO o.a.j.JMeter: JMeter  Locale=English (EN)
+2025-11-11 18:47:25,308 INFO o.a.j.JMeter: JMeterHome=/opt/homebrew/Cellar/jmeter/5.6.3/libexec
+2025-11-11 18:47:25,308 INFO o.a.j.JMeter: user.dir  =/Users/ko/Desktop/me/university/Graduation-Project/nft
+2025-11-11 18:47:25,308 INFO o.a.j.JMeter: PWD       =/Users/ko/Desktop/me/university/Graduation-Project/nft
+2025-11-11 18:47:25,310 INFO o.a.j.JMeter: IP: 127.0.0.1 Name: Ko-MacBookAir.local FullName: localhost
+2025-11-11 18:47:25,316 INFO o.a.j.JMeter: Loaded icon properties from org/apache/jmeter/images/icon.properties
+2025-11-11 18:47:25,678 INFO o.a.j.JMeterGuiLauncher: Setting LAF to: com.github.weisj.darklaf.DarkLaf:com.github.weisj.darklaf.theme.DarculaTheme
+2025-11-11 18:47:27,138 INFO o.a.j.r.ClassFinder: Will scan jar /opt/homebrew/Cellar/jmeter/5.6.3/libexec/lib/ext/jmeter-plugins-manager-1.9.jar with filter ExtendsClassFilter [parents=[interface org.apache.jmeter.gui.action.Command], inner=false, contains=null, notContains=null]. Consider exposing JMeter plugins via META-INF/services, and add JMeter-Skip-Class-Scanning=true manifest attribute so JMeter can skip classfile scanning
+2025-11-11 18:47:27,172 INFO o.a.j.r.ClassFinder: Will scan jar /opt/homebrew/Cellar/jmeter/5.6.3/libexec/lib/ext/jmeter-plugins-manager-1.10.jar with filter ExtendsClassFilter [parents=[interface org.apache.jmeter.gui.action.Command], inner=false, contains=null, notContains=null]. Consider exposing JMeter plugins via META-INF/services, and add JMeter-Skip-Class-Scanning=true manifest attribute so JMeter can skip classfile scanning
+2025-11-11 18:47:27,173 INFO o.a.j.r.ClassFinder: Will scan jar /opt/homebrew/Cellar/jmeter/5.6.3/libexec/lib/ext/jmeter-plugins-casutg-3.1.1.jar with filter ExtendsClassFilter [parents=[interface org.apache.jmeter.gui.action.Command], inner=false, contains=null, notContains=null]. Consider exposing JMeter plugins via META-INF/services, and add JMeter-Skip-Class-Scanning=true manifest attribute so JMeter can skip classfile scanning
+2025-11-11 18:47:27,206 INFO o.a.j.r.ClassFinder: Will scan jar /opt/homebrew/Cellar/jmeter/5.6.3/libexec/lib/ext/jmeter-plugins-manager-1.9.jar with filter ExtendsClassFilter [parents=[interface org.apache.jmeter.gui.plugin.MenuCreator], inner=false, contains=null, notContains=null]. Consider exposing JMeter plugins via META-INF/services, and add JMeter-Skip-Class-Scanning=true manifest attribute so JMeter can skip classfile scanning
+2025-11-11 18:47:27,207 INFO o.a.j.r.ClassFinder: Will scan jar /opt/homebrew/Cellar/jmeter/5.6.3/libexec/lib/ext/jmeter-plugins-manager-1.10.jar with filter ExtendsClassFilter [parents=[interface org.apache.jmeter.gui.plugin.MenuCreator], inner=false, contains=null, notContains=null]. Consider exposing JMeter plugins via META-INF/services, and add JMeter-Skip-Class-Scanning=true manifest attribute so JMeter can skip classfile scanning
+2025-11-11 18:47:27,208 INFO o.a.j.r.ClassFinder: Will scan jar /opt/homebrew/Cellar/jmeter/5.6.3/libexec/lib/ext/jmeter-plugins-casutg-3.1.1.jar with filter ExtendsClassFilter [parents=[interface org.apache.jmeter.gui.plugin.MenuCreator], inner=false, contains=null, notContains=null]. Consider exposing JMeter plugins via META-INF/services, and add JMeter-Skip-Class-Scanning=true manifest attribute so JMeter can skip classfile scanning
+2025-11-11 18:47:27,236 WARN o.j.r.PluginManager: Found JAR conflict: /opt/homebrew/Cellar/jmeter/5.6.3/libexec/lib/ext/jmeter-plugins-manager-1.9.jar and /opt/homebrew/Cellar/jmeter/5.6.3/libexec/lib/ext/jmeter-plugins-manager-1.10.jar
+2025-11-11 18:47:27,287 INFO o.j.r.JARSourceHTTP: Found cached repo
+2025-11-11 18:47:27,394 INFO o.j.r.PluginManager: Plugins Status: [jpgc-casutg=3.1.1, jpgc-plugins-manager=1.10, jmeter-core=5.6.3, jmeter-ftp=5.6.3, jmeter-http=5.6.3, jmeter-jdbc=5.6.3, jmeter-jms=5.6.3, jmeter-junit=5.6.3, jmeter-java=5.6.3, jmeter-ldap=5.6.3, jmeter-mail=5.6.3, jmeter-mongodb=5.6.3, jmeter-native=5.6.3, jmeter-tcp=5.6.3, jmeter-components=5.6.3]
+2025-11-11 18:47:27,395 INFO o.j.r.PluginManagerMenuItem: Plugins Manager has upgrades: [jpgc-plugins-manager]
+2025-11-11 18:47:28,453 INFO o.a.j.JMeterGuiLauncher: Loading file: dbids-nft-fixed4.jmx
+2025-11-11 18:47:28,455 INFO o.a.j.s.FileServer: Default base='/Users/ko/Desktop/me/university/Graduation-Project/nft'
+2025-11-11 18:47:28,456 INFO o.a.j.s.FileServer: Set new base='/Users/ko/Desktop/me/university/Graduation-Project/nft'
+2025-11-11 18:47:28,559 INFO o.a.j.s.SaveService: Testplan (JMX) version: 2.2. Testlog (JTL) version: 2.2
+2025-11-11 18:47:28,565 INFO o.a.j.s.SaveService: Using SaveService properties version 5.0
+2025-11-11 18:47:28,567 INFO o.a.j.s.SaveService: Using SaveService properties file encoding UTF-8
+2025-11-11 18:47:28,568 INFO o.a.j.s.SaveService: Loading file: dbids-nft-fixed4.jmx
+2025-11-11 18:47:28,576 WARN o.j.r.p.TestPlanAnalyzer: Cannot parse file: dbids-nft-fixed4.jmx
+org.xml.sax.SAXParseException: The markup in the document following the root element must be well-formed.
+	at org.apache.xerces.parsers.DOMParser.parse(Unknown Source) ~[xercesImpl-2.12.2.jar:?]
+	at org.apache.xerces.jaxp.DocumentBuilderImpl.parse(Unknown Source) ~[xercesImpl-2.12.2.jar:?]
+	at java.xml/javax.xml.parsers.DocumentBuilder.parse(DocumentBuilder.java:122) ~[?:?]
+	at org.jmeterplugins.repository.plugins.TestPlanAnalyzer.getNodeListWithClassNames(TestPlanAnalyzer.java:130) [jmeter-plugins-manager-1.10.jar:?]
+	at org.jmeterplugins.repository.plugins.TestPlanAnalyzer.analyze(TestPlanAnalyzer.java:37) [jmeter-plugins-manager-1.10.jar:?]
+	at org.jmeterplugins.repository.plugins.PluginSuggester.analyzeTestPlan(PluginSuggester.java:51) [jmeter-plugins-manager-1.10.jar:?]
+	at org.jmeterplugins.repository.plugins.PluginSuggester.findPluginsToInstall(PluginSuggester.java:44) [jmeter-plugins-manager-1.10.jar:?]
+	at org.jmeterplugins.repository.plugins.PluginSuggester.checkAndSuggest(PluginSuggester.java:28) [jmeter-plugins-manager-1.10.jar:?]
+	at org.jmeterplugins.repository.logging.LoggerAppender.append(LoggerAppender.java:33) [jmeter-plugins-manager-1.10.jar:?]
+	at org.apache.logging.log4j.core.config.AppenderControl.tryCallAppender(AppenderControl.java:160) [log4j-core-2.22.1.jar:2.22.1]
+	at org.apache.logging.log4j.core.config.AppenderControl.callAppender0(AppenderControl.java:133) [log4j-core-2.22.1.jar:2.22.1]
+	at org.apache.logging.log4j.core.config.AppenderControl.callAppenderPreventRecursion(AppenderControl.java:124) [log4j-core-2.22.1.jar:2.22.1]
+	at org.apache.logging.log4j.core.config.AppenderControl.callAppender(AppenderControl.java:88) [log4j-core-2.22.1.jar:2.22.1]
+	at org.apache.logging.log4j.core.config.LoggerConfig.callAppenders(LoggerConfig.java:705) [log4j-core-2.22.1.jar:2.22.1]
+	at org.apache.logging.log4j.core.config.LoggerConfig.processLogEvent(LoggerConfig.java:663) [log4j-core-2.22.1.jar:2.22.1]
+	at org.apache.logging.log4j.core.config.LoggerConfig.log(LoggerConfig.java:639) [log4j-core-2.22.1.jar:2.22.1]
+	at org.apache.logging.log4j.core.config.LoggerConfig.log(LoggerConfig.java:575) [log4j-core-2.22.1.jar:2.22.1]
+	at org.apache.logging.log4j.core.config.AwaitCompletionReliabilityStrategy.log(AwaitCompletionReliabilityStrategy.java:92) [log4j-core-2.22.1.jar:2.22.1]
+	at org.apache.logging.log4j.core.Logger.log(Logger.java:169) [log4j-core-2.22.1.jar:2.22.1]
+	at org.apache.logging.log4j.spi.AbstractLogger.tryLogMessage(AbstractLogger.java:2933) [log4j-api-2.22.1.jar:2.22.1]
+	at org.apache.logging.log4j.spi.AbstractLogger.logMessageTrackRecursion(AbstractLogger.java:2886) [log4j-api-2.22.1.jar:2.22.1]
+	at org.apache.logging.log4j.spi.AbstractLogger.logMessageSafely(AbstractLogger.java:2868) [log4j-api-2.22.1.jar:2.22.1]
+	at org.apache.logging.log4j.spi.AbstractLogger.logMessage(AbstractLogger.java:2664) [log4j-api-2.22.1.jar:2.22.1]
+	at org.apache.logging.log4j.spi.AbstractLogger.logIfEnabled(AbstractLogger.java:2429) [log4j-api-2.22.1.jar:2.22.1]
+	at org.apache.logging.slf4j.Log4jLogger.info(Log4jLogger.java:184) [log4j-slf4j-impl-2.22.1.jar:2.22.1]
+	at org.apache.jmeter.save.SaveService.loadTree(SaveService.java:425) [ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.JMeterGuiLauncher$loadFile$2.invokeSuspend(JMeterGuiLauncher.kt:140) [ApacheJMeter_core.jar:5.6.3]
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33) [kotlin-stdlib-1.9.22.jar:1.9.22-release-704]
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:108) [kotlinx-coroutines-core-jvm-1.7.3.jar:?]
+	at kotlinx.coroutines.scheduling.CoroutineScheduler.runSafely(CoroutineScheduler.kt:584) [kotlinx-coroutines-core-jvm-1.7.3.jar:?]
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(CoroutineScheduler.kt:793) [kotlinx-coroutines-core-jvm-1.7.3.jar:?]
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(CoroutineScheduler.kt:697) [kotlinx-coroutines-core-jvm-1.7.3.jar:?]
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:684) [kotlinx-coroutines-core-jvm-1.7.3.jar:?]
+2025-11-11 18:47:28,596 ERROR o.a.j.JMeterGuiLauncher: Failure loading test file
+java.lang.IllegalArgumentException: Problem loading XML from:'/Users/ko/Desktop/me/university/Graduation-Project/nft/dbids-nft-fixed4.jmx'. 
+Cause:
+ClassCastException: class org.apache.jorphan.collections.ListedHashTree cannot be cast to class org.apache.jmeter.testelement.property.JMeterProperty (org.apache.jorphan.collections.ListedHashTree and org.apache.jmeter.testelement.property.JMeterProperty are in unnamed module of loader org.apache.jmeter.DynamicClassLoader @3e3abc88)
+
+ Detail:com.thoughtworks.xstream.converters.ConversionException: 
+---- Debugging information ----
+cause-exception     : com.thoughtworks.xstream.converters.ConversionException
+cause-message       : 
+first-jmeter-class  : org.apache.jmeter.save.converters.HashTreeConverter.unmarshal(HashTreeConverter.java:66)
+class               : org.apache.jmeter.save.ScriptWrapper
+required-type       : org.apache.jmeter.save.ScriptWrapper
+converter-type      : org.apache.jmeter.save.ScriptWrapperConverter
+path                : /jmeterTestPlan/hashTree/TestPlan/hashTree
+line number         : 6
+version             : 5.6.3
+-------------------------------
+	at org.apache.jmeter.save.SaveService.readTree(SaveService.java:456) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.save.SaveService.loadTree(SaveService.java:429) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.JMeterGuiLauncher$loadFile$2.invokeSuspend(JMeterGuiLauncher.kt:140) ~[ApacheJMeter_core.jar:5.6.3]
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33) ~[kotlin-stdlib-1.9.22.jar:1.9.22-release-704]
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:108) ~[kotlinx-coroutines-core-jvm-1.7.3.jar:?]
+	at kotlinx.coroutines.scheduling.CoroutineScheduler.runSafely(CoroutineScheduler.kt:584) ~[kotlinx-coroutines-core-jvm-1.7.3.jar:?]
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(CoroutineScheduler.kt:793) ~[kotlinx-coroutines-core-jvm-1.7.3.jar:?]
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(CoroutineScheduler.kt:697) ~[kotlinx-coroutines-core-jvm-1.7.3.jar:?]
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:684) ~[kotlinx-coroutines-core-jvm-1.7.3.jar:?]
+Caused by: com.thoughtworks.xstream.converters.ConversionException: 
+---- Debugging information ----
+cause-exception     : com.thoughtworks.xstream.converters.ConversionException
+cause-message       : 
+first-jmeter-class  : org.apache.jmeter.save.converters.HashTreeConverter.unmarshal(HashTreeConverter.java:66)
+class               : org.apache.jmeter.save.ScriptWrapper
+required-type       : org.apache.jmeter.save.ScriptWrapper
+converter-type      : org.apache.jmeter.save.ScriptWrapperConverter
+path                : /jmeterTestPlan/hashTree/TestPlan/hashTree
+line number         : 6
+version             : 5.6.3
+-------------------------------
+	at org.apache.jmeter.save.ScriptWrapperConverter.createConversionException(ScriptWrapperConverter.java:101) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.save.ScriptWrapperConverter.unmarshal(ScriptWrapperConverter.java:95) ~[ApacheJMeter_core.jar:5.6.3]
+	at com.thoughtworks.xstream.core.TreeUnmarshaller.convert(TreeUnmarshaller.java:74) ~[xstream-1.4.20.jar:1.4.20]
+	at com.thoughtworks.xstream.core.AbstractReferenceUnmarshaller.convert(AbstractReferenceUnmarshaller.java:72) ~[xstream-1.4.20.jar:1.4.20]
+	at com.thoughtworks.xstream.core.TreeUnmarshaller.convertAnother(TreeUnmarshaller.java:68) ~[xstream-1.4.20.jar:1.4.20]
+	at com.thoughtworks.xstream.core.TreeUnmarshaller.convertAnother(TreeUnmarshaller.java:52) ~[xstream-1.4.20.jar:1.4.20]
+	at com.thoughtworks.xstream.core.TreeUnmarshaller.start(TreeUnmarshaller.java:136) ~[xstream-1.4.20.jar:1.4.20]
+	at com.thoughtworks.xstream.core.AbstractTreeMarshallingStrategy.unmarshal(AbstractTreeMarshallingStrategy.java:32) ~[xstream-1.4.20.jar:1.4.20]
+	at com.thoughtworks.xstream.XStream.unmarshal(XStream.java:1464) ~[xstream-1.4.20.jar:1.4.20]
+	at com.thoughtworks.xstream.XStream.unmarshal(XStream.java:1441) ~[xstream-1.4.20.jar:1.4.20]
+	at com.thoughtworks.xstream.XStream.fromXML(XStream.java:1321) ~[xstream-1.4.20.jar:1.4.20]
+	at org.apache.jmeter.save.SaveService.readTree(SaveService.java:446) ~[ApacheJMeter_core.jar:5.6.3]
+	... 8 more
+Caused by: com.thoughtworks.xstream.converters.ConversionException: 
+---- Debugging information ----
+cause-exception     : java.lang.ClassCastException
+cause-message       : class org.apache.jorphan.collections.ListedHashTree cannot be cast to class org.apache.jmeter.testelement.property.JMeterProperty (org.apache.jorphan.collections.ListedHashTree and org.apache.jmeter.testelement.property.JMeterProperty are in unnamed module of loader org.apache.jmeter.DynamicClassLoader @3e3abc88)
+class               : org.apache.jmeter.testelement.TestPlan
+required-type       : org.apache.jmeter.testelement.TestPlan
+converter-type      : org.apache.jmeter.save.converters.TestElementConverter
+path                : /jmeterTestPlan/hashTree/TestPlan/hashTree
+line number         : 6
+class[1]            : org.apache.jorphan.collections.ListedHashTree
+required-type[1]    : org.apache.jorphan.collections.ListedHashTree
+converter-type[1]   : org.apache.jmeter.save.converters.HashTreeConverter
+-------------------------------
+	at com.thoughtworks.xstream.core.TreeUnmarshaller.convert(TreeUnmarshaller.java:81) ~[xstream-1.4.20.jar:1.4.20]
+	at com.thoughtworks.xstream.core.AbstractReferenceUnmarshaller.convert(AbstractReferenceUnmarshaller.java:72) ~[xstream-1.4.20.jar:1.4.20]
+	at com.thoughtworks.xstream.core.TreeUnmarshaller.convertAnother(TreeUnmarshaller.java:68) ~[xstream-1.4.20.jar:1.4.20]
+	at com.thoughtworks.xstream.core.TreeUnmarshaller.convertAnother(TreeUnmarshaller.java:52) ~[xstream-1.4.20.jar:1.4.20]
+	at com.thoughtworks.xstream.converters.collections.AbstractCollectionConverter.readBareItem(AbstractCollectionConverter.java:132) ~[xstream-1.4.20.jar:1.4.20]
+	at org.apache.jmeter.save.converters.HashTreeConverter.unmarshal(HashTreeConverter.java:66) ~[ApacheJMeter_core.jar:5.6.3]
+	at com.thoughtworks.xstream.core.TreeUnmarshaller.convert(TreeUnmarshaller.java:74) ~[xstream-1.4.20.jar:1.4.20]
+	at com.thoughtworks.xstream.core.AbstractReferenceUnmarshaller.convert(AbstractReferenceUnmarshaller.java:72) ~[xstream-1.4.20.jar:1.4.20]
+	at com.thoughtworks.xstream.core.TreeUnmarshaller.convertAnother(TreeUnmarshaller.java:68) ~[xstream-1.4.20.jar:1.4.20]
+	at com.thoughtworks.xstream.core.TreeUnmarshaller.convertAnother(TreeUnmarshaller.java:52) ~[xstream-1.4.20.jar:1.4.20]
+	at org.apache.jmeter.save.ScriptWrapperConverter.unmarshal(ScriptWrapperConverter.java:93) ~[ApacheJMeter_core.jar:5.6.3]
+	at com.thoughtworks.xstream.core.TreeUnmarshaller.convert(TreeUnmarshaller.java:74) ~[xstream-1.4.20.jar:1.4.20]
+	at com.thoughtworks.xstream.core.AbstractReferenceUnmarshaller.convert(AbstractReferenceUnmarshaller.java:72) ~[xstream-1.4.20.jar:1.4.20]
+	at com.thoughtworks.xstream.core.TreeUnmarshaller.convertAnother(TreeUnmarshaller.java:68) ~[xstream-1.4.20.jar:1.4.20]
+	at com.thoughtworks.xstream.core.TreeUnmarshaller.convertAnother(TreeUnmarshaller.java:52) ~[xstream-1.4.20.jar:1.4.20]
+	at com.thoughtworks.xstream.core.TreeUnmarshaller.start(TreeUnmarshaller.java:136) ~[xstream-1.4.20.jar:1.4.20]
+	at com.thoughtworks.xstream.core.AbstractTreeMarshallingStrategy.unmarshal(AbstractTreeMarshallingStrategy.java:32) ~[xstream-1.4.20.jar:1.4.20]
+	at com.thoughtworks.xstream.XStream.unmarshal(XStream.java:1464) ~[xstream-1.4.20.jar:1.4.20]
+	at com.thoughtworks.xstream.XStream.unmarshal(XStream.java:1441) ~[xstream-1.4.20.jar:1.4.20]
+	at com.thoughtworks.xstream.XStream.fromXML(XStream.java:1321) ~[xstream-1.4.20.jar:1.4.20]
+	at org.apache.jmeter.save.SaveService.readTree(SaveService.java:446) ~[ApacheJMeter_core.jar:5.6.3]
+	... 8 more
+Caused by: java.lang.ClassCastException: class org.apache.jorphan.collections.ListedHashTree cannot be cast to class org.apache.jmeter.testelement.property.JMeterProperty (org.apache.jorphan.collections.ListedHashTree and org.apache.jmeter.testelement.property.JMeterProperty are in unnamed module of loader org.apache.jmeter.DynamicClassLoader @3e3abc88)
+	at org.apache.jmeter.save.converters.TestElementConverter.unmarshal(TestElementConverter.java:109) ~[ApacheJMeter_core.jar:5.6.3]
+	at com.thoughtworks.xstream.core.TreeUnmarshaller.convert(TreeUnmarshaller.java:74) ~[xstream-1.4.20.jar:1.4.20]
+	at com.thoughtworks.xstream.core.AbstractReferenceUnmarshaller.convert(AbstractReferenceUnmarshaller.java:72) ~[xstream-1.4.20.jar:1.4.20]
+	at com.thoughtworks.xstream.core.TreeUnmarshaller.convertAnother(TreeUnmarshaller.java:68) ~[xstream-1.4.20.jar:1.4.20]
+	at com.thoughtworks.xstream.core.TreeUnmarshaller.convertAnother(TreeUnmarshaller.java:52) ~[xstream-1.4.20.jar:1.4.20]
+	at com.thoughtworks.xstream.converters.collections.AbstractCollectionConverter.readBareItem(AbstractCollectionConverter.java:132) ~[xstream-1.4.20.jar:1.4.20]
+	at org.apache.jmeter.save.converters.HashTreeConverter.unmarshal(HashTreeConverter.java:66) ~[ApacheJMeter_core.jar:5.6.3]
+	at com.thoughtworks.xstream.core.TreeUnmarshaller.convert(TreeUnmarshaller.java:74) ~[xstream-1.4.20.jar:1.4.20]
+	at com.thoughtworks.xstream.core.AbstractReferenceUnmarshaller.convert(AbstractReferenceUnmarshaller.java:72) ~[xstream-1.4.20.jar:1.4.20]
+	at com.thoughtworks.xstream.core.TreeUnmarshaller.convertAnother(TreeUnmarshaller.java:68) ~[xstream-1.4.20.jar:1.4.20]
+	at com.thoughtworks.xstream.core.TreeUnmarshaller.convertAnother(TreeUnmarshaller.java:52) ~[xstream-1.4.20.jar:1.4.20]
+	at org.apache.jmeter.save.ScriptWrapperConverter.unmarshal(ScriptWrapperConverter.java:93) ~[ApacheJMeter_core.jar:5.6.3]
+	at com.thoughtworks.xstream.core.TreeUnmarshaller.convert(TreeUnmarshaller.java:74) ~[xstream-1.4.20.jar:1.4.20]
+	at com.thoughtworks.xstream.core.AbstractReferenceUnmarshaller.convert(AbstractReferenceUnmarshaller.java:72) ~[xstream-1.4.20.jar:1.4.20]
+	at com.thoughtworks.xstream.core.TreeUnmarshaller.convertAnother(TreeUnmarshaller.java:68) ~[xstream-1.4.20.jar:1.4.20]
+	at com.thoughtworks.xstream.core.TreeUnmarshaller.convertAnother(TreeUnmarshaller.java:52) ~[xstream-1.4.20.jar:1.4.20]
+	at com.thoughtworks.xstream.core.TreeUnmarshaller.start(TreeUnmarshaller.java:136) ~[xstream-1.4.20.jar:1.4.20]
+	at com.thoughtworks.xstream.core.AbstractTreeMarshallingStrategy.unmarshal(AbstractTreeMarshallingStrategy.java:32) ~[xstream-1.4.20.jar:1.4.20]
+	at com.thoughtworks.xstream.XStream.unmarshal(XStream.java:1464) ~[xstream-1.4.20.jar:1.4.20]
+	at com.thoughtworks.xstream.XStream.unmarshal(XStream.java:1441) ~[xstream-1.4.20.jar:1.4.20]
+	at com.thoughtworks.xstream.XStream.fromXML(XStream.java:1321) ~[xstream-1.4.20.jar:1.4.20]
+	at org.apache.jmeter.save.SaveService.readTree(SaveService.java:446) ~[ApacheJMeter_core.jar:5.6.3]
+	... 8 more
+2025-11-11 18:47:28,597 ERROR o.a.j.u.JMeterUtils: java.lang.IllegalArgumentException: Problem loading XML from:'/Users/ko/Desktop/me/university/Graduation-Project/nft/dbids-nft-fixed4.jmx'. 
+Cause:
+ClassCastException: class org.apache.jorphan.collections.ListedHashTree cannot be cast to class org.apache.jmeter.testelement.property.JMeterProperty (org.apache.jorphan.collections.ListedHashTree and org.apache.jmeter.testelement.property.JMeterProperty are in unnamed module of loader org.apache.jmeter.DynamicClassLoader @3e3abc88)
+
+ Detail:com.thoughtworks.xstream.converters.ConversionException: 
+---- Debugging information ----
+cause-exception     : com.thoughtworks.xstream.converters.ConversionException
+cause-message       : 
+first-jmeter-class  : org.apache.jmeter.save.converters.HashTreeConverter.unmarshal(HashTreeConverter.java:66)
+class               : org.apache.jmeter.save.ScriptWrapper
+required-type       : org.apache.jmeter.save.ScriptWrapper
+converter-type      : org.apache.jmeter.save.ScriptWrapperConverter
+path                : /jmeterTestPlan/hashTree/TestPlan/hashTree
+line number         : 6
+version             : 5.6.3
+-------------------------------

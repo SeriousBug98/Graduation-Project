@@ -1,0 +1,50 @@
+DROP TABLE important_table,drop table
+DROP TABLE users,drop table users
+DROP TABLE orders,drop table orders
+DELETE FROM users WHERE 1=1,mass delete users
+DELETE FROM orders WHERE 1=1,mass delete orders
+UPDATE users SET role='admin' WHERE id=1,priv esc update
+UPDATE accounts SET balance=0 WHERE id=1,destructive update
+SELECT * FROM users WHERE username='' OR '1'='1',tautology injection
+SELECT * FROM orders WHERE 'x'='x',tautology test
+SELECT * FROM information_schema.tables,metadata enumeration
+SELECT * FROM information_schema.columns,metadata columns
+UNION SELECT null,union select null
+UNION SELECT 1,union select constant
+UNION SELECT password_hash FROM users,union dump password hash
+UNION SELECT api_key FROM secrets,union dump api key
+' OR '1'='1,string break injection
+' OR 1=1 --,comment injection
+admin' --,login bypass pattern
+admin' #,login bypass hash
+admin' or '1'='1,login bypass tautology
+1; DROP TABLE sessions,stacked statements
+1; DELETE FROM sessions,stacked delete
+1; UPDATE users SET role='admin' WHERE id=1,stacked update
+SELECT load_file('/etc/passwd'),file read attempt
+SELECT pg_sleep(5),time based DoS
+SELECT sleep(5),time delay mysql
+SELECT 1 FROM dual WHERE 1=pg_sleep(3),time based injection
+xp_cmdshell 'dir',mssql command exec
+CALL shutdown(),proc shutdown attempt
+SELECT * FROM mysql.user,mysql user table read
+SELECT * FROM pg_catalog.pg_user,postgres user table read
+COPY secrets TO '/tmp/leak.txt',postgres copy out
+BULK INSERT users FROM '/etc/passwd',mssql bulk insert
+ALTER TABLE users DROP COLUMN password,alter drop column
+ALTER TABLE orders DROP COLUMN total,alter drop column orders
+GRANT ALL ON objects TO public,grant all
+REVOKE ALL ON users FROM admin,revoke admin
+TRUNCATE TABLE logs,truncate logs
+TRUNCATE TABLE sessions,truncate sessions
+CREATE USER attacker WITH PASSWORD 'pw',create user
+CREATE FUNCTION evil RETURNS void LANGUAGE plpgsql AS $$ BEGIN END $$,create function
+CREATE EXTENSION file_fdw,create extension
+DROP DATABASE prod,drop database
+ALTER SYSTEM SET shared_buffers='0',alter system
+SET maintenance_mode=on,set maintenance
+INSERT INTO admin(email,password) VALUES('a@a','p'),insert admin
+LOCK TABLE users,lock table users
+LOCK TABLE orders,lock table orders
+ANALYZE VERBOSE users,analyze verbose users
+VACUUM FULL,vacuum full

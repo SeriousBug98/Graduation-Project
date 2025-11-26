@@ -5,37 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bb8c7a78-5d9a-4d4b-b1e9-a3c442edcbc0" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../backend.zip" beforeDir="false" afterPath="$PROJECT_DIR$/../backend.zip" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.14/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.14/checksums/checksums.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.14/checksums/md5-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.14/checksums/md5-checksums.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.14/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.14/checksums/sha1-checksums.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.14/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.14/executionHistory/executionHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.14/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.14/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.14/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.14/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.14/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.14/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.14/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.14/fileHashes/resourceHashesCache.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/978d71d1-b0ea-49e5-9403-b01bc48bc030.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/978d71d1-b0ea-49e5-9403-b01bc48bc030.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/dbids/api/IngestController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/example/dbids/api/IngestController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/dbids/modules/authz/AuthZEngine$Action.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/example/dbids/modules/authz/AuthZEngine$Action.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/dbids/modules/authz/AuthZEngine$Violation.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/example/dbids/modules/authz/AuthZEngine$Violation.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/dbids/modules/authz/AuthZEngine.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/example/dbids/modules/authz/AuthZEngine.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/dbids/modules/authz/AuthZProperties$Role.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/example/dbids/modules/authz/AuthZProperties$Role.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/dbids/modules/authz/AuthZProperties.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/example/dbids/modules/authz/AuthZProperties.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/dbids/modules/authz/AuthZService.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/example/dbids/modules/authz/AuthZService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/dbids/modules/storage/StorageService.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/example/dbids/modules/storage/StorageService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/dbids.sqlite" beforeDir="false" afterPath="$PROJECT_DIR$/data/dbids.sqlite" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dbids/api/IngestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dbids/api/IngestController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dbids/dto/QueryLogResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dbids/dto/QueryLogResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dbids/modules/authz/AuthZEngine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dbids/modules/authz/AuthZEngine.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dbids/modules/authz/AuthZProperties.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dbids/modules/authz/AuthZProperties.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dbids/modules/authz/AuthZService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dbids/modules/authz/AuthZService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dbids/modules/storage/LogQueryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dbids/modules/storage/LogQueryService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../infra/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../infra/docker-compose.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,58 +64,58 @@
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Gradle.AuthZEngineTest.executor": "Run",
-    "Gradle.AuthZServiceTest.executor": "Run",
-    "Gradle.BehaviorDetectorTest.executor": "Run",
-    "Gradle.BehaviorDetectorTest.lowActivityNoEventEvenIfRowsHigh.executor": "Run",
-    "Gradle.Build backend.executor": "Run",
-    "Gradle.DbidsIntegrationTest.executor": "Run",
-    "Gradle.DetectionServiceTest.createsPatternHighOnDropTable.executor": "Run",
-    "Gradle.DetectionServiceTest.executor": "Run",
-    "Gradle.Download Sources.executor": "Run",
-    "Gradle.EmailSenderTest.executor": "Run",
-    "Gradle.IT00_ContextBootTest.executor": "Run",
-    "Gradle.IT00_DiagnosticsTest.executor": "Run",
-    "Gradle.IT00_NotifySmokeTest.executor": "Run",
-    "Gradle.IT01_QueryLoggingIT.executor": "Run",
-    "Gradle.IT01_QueryLoggingTest (1).executor": "Run",
-    "Gradle.IT01_QueryLoggingTest (2).executor": "Run",
-    "Gradle.IT01_QueryLoggingTest.executor": "Run",
-    "Gradle.IngestE2ETest.executor": "Run",
-    "Gradle.NotificationServiceTest.executor": "Run",
-    "Gradle.ProxyRequestHandlerTest.executor": "Run",
-    "Gradle.ProxyRequestHandlerTest.selectRawExtractedAsUtf8.executor": "Run",
-    "Gradle.ProxyResponseHandlerTest.executor": "Run",
-    "Gradle.RuleEngineTest.executor": "Run",
-    "Gradle.SlackSenderTest.executor": "Run",
-    "Gradle.StorageServiceTest.executor": "Run",
-    "Gradle.Tests in 'com.example.dbids'.executor": "Run",
-    "Gradle.Tests in 'com.example.dbids.modules'.executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "Spring Boot.DbIdsApplication.executor": "Run",
-    "Spring Boot.DbidsApplication.executor": "Run",
-    "git-widget-placeholder": "main",
-    "junie.onboarding.icon.badge.shown": "true",
-    "kotlin-language-version-configured": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.keymap",
-    "to.speed.mode.migration.done": "true",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Gradle.AuthZEngineTest.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.AuthZServiceTest.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.BehaviorDetectorTest.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.BehaviorDetectorTest.lowActivityNoEventEvenIfRowsHigh.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Build backend.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.DbidsIntegrationTest.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.DetectionServiceTest.createsPatternHighOnDropTable.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.DetectionServiceTest.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Download Sources.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.EmailSenderTest.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.IT00_ContextBootTest.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.IT00_DiagnosticsTest.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.IT00_NotifySmokeTest.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.IT01_QueryLoggingIT.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.IT01_QueryLoggingTest (1).executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.IT01_QueryLoggingTest (2).executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.IT01_QueryLoggingTest.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.IngestE2ETest.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.NotificationServiceTest.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.ProxyRequestHandlerTest.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.ProxyRequestHandlerTest.selectRawExtractedAsUtf8.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.ProxyResponseHandlerTest.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.RuleEngineTest.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.SlackSenderTest.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.StorageServiceTest.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Tests in 'com.example.dbids'.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Tests in 'com.example.dbids.modules'.executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;Spring Boot.DbIdsApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.DbidsApplication.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;,
+    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Spring Boot.DbidsApplication">
     <configuration name="IT00_DiagnosticsTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
@@ -297,9 +270,9 @@
     <list>
       <item itemvalue="Gradle.IT00_DiagnosticsTest" />
       <item itemvalue="Gradle.IT01_QueryLoggingIT" />
-      <item itemvalue="Gradle.IT01_QueryLoggingTest" />
       <item itemvalue="Gradle.IT01_QueryLoggingTest (1)" />
       <item itemvalue="Gradle.IT01_QueryLoggingTest (2)" />
+      <item itemvalue="Gradle.IT01_QueryLoggingTest" />
       <item itemvalue="Spring Boot.DbIdsApplication" />
       <item itemvalue="Spring Boot.DbidsApplication" />
     </list>
@@ -330,7 +303,10 @@
       <updated>1761034094450</updated>
       <workItem from="1761034095529" duration="8907000" />
       <workItem from="1761056242883" duration="60960000" />
-      <workItem from="1761547691646" duration="115572000" />
+      <workItem from="1761547691646" duration="120531000" />
+      <workItem from="1762932119351" duration="4000" />
+      <workItem from="1764062999327" duration="1237000" />
+      <workItem from="1764071196020" duration="1000" />
     </task>
     <servers />
   </component>
